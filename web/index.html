@@ -1,0 +1,257 @@
+﻿<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f1e9">
+<meta name="description" content="DWG Version Switch: detecta versiones DWG sin subir planos y convierte con AutoCAD local. Prueba real documentada: 7 conversiones, 3.043 entidades. Software abierto MIT.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://trafficlab-panorama.com/dwg-versiones.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Tu DWG no abre? Comprueba la versión gratis | TraficLabPro">
+<meta property="og:description" content="Detecta el formato DWG en segundos. Tu plano no sale del navegador. Convierte localmente en Windows con tu AutoCAD.">
+<meta property="og:url" content="https://trafficlab-panorama.com/dwg-versiones.html">
+<meta property="og:image" content="https://trafficlab-panorama.com/assets/dwg-versiones-preview.svg?v=2">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<script defer src="./dwg-versiones.js"></script>
+<title>DWG Version Switch · ¿Tu DWG no abre? Revisa la versión gratis | TraficLabPro</title>
+</head>
+<body>
+<a class="skip" href="#analizador">Ir al analizador DWG</a>
+
+<div class="topline"><span><span class="topline-disc"></span> UTILIDAD GRATIS / PANORAMA LAB</span><span>TRAFICLABPRO <i>—</i> ENGINEERING SOFTWARE</span></div>
+<header class="header" id="inicio">
+  <a class="brand" href="https://trafficlab-panorama.com/" aria-label="PANORAMA LAB, volver al catálogo">
+    <span class="brand-mark" aria-hidden="true">✳</span>
+    <span>PANORAMA<strong>LAB</strong><small>APPS REALES / IDEAS ÚTILES</small></span>
+  </a>
+  <nav class="nav" aria-label="Navegación de la herramienta">
+    <a href="#analizador">ANALIZAR DWG</a>
+    <a href="#como-funciona">CÓMO FUNCIONA</a>
+    <a href="#pruebas-reales">PRUEBAS REALES</a><a href="#preguntas">PREGUNTAS</a>
+  </nav>
+  <a class="back-link" href="https://trafficlab-panorama.com/">TODAS LAS HERRAMIENTAS <span aria-hidden="true">↗</span></a>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-rail">
+      <span>07 / CAD UTILITIES</span>
+      <span>HECHO PARA PLANOS REALES</span>
+    </div>
+    <div class="hero-grid">
+      <div class="hero-story">
+        <p class="eyebrow"><span class="eyebrow-dash"></span> COMPATIBILIDAD DWG, SIN COMPLICACIONES</p>
+        <h1 id="hero-title">¿TU DWG<br>NO ABRE?<br><em>REVISA LA<br>VERSIÓN.</em></h1>
+        <p class="hero-lead">Comprueba qué formato tiene tu plano y cuál necesita la versión de AutoCAD de tu cliente. <strong>Gratis. Sin registro. Sin enviar el archivo.</strong></p>
+        <a class="hero-scroll" href="#analizador"><span>EMPEZAR CON MI ARCHIVO</span><span class="hero-arrow" aria-hidden="true">↗</span></a>
+        <div class="hero-evidence" aria-label="Ventajas verificables">
+          <div><strong>00</strong><span>PLANOS ENVIADOS<br>A SERVIDORES</span></div>
+          <div><strong>07</strong><span>FORMATOS DWG<br>DE DESTINO</span></div>
+          <div><strong>7/7</strong><span>CONVERSIONES REALES<br>DE UNA MUESTRA*</span></div>
+        </div>
+        <p class="micro-note">*Evaluamos un único DWG real con AutoCAD 2027. <a href="#pruebas-reales">Consulta la metodología y los límites de la prueba ↓</a></p>
+      </div>
+
+      <section class="workspace" id="analizador" aria-labelledby="tool-title">
+        <div class="workspace-header"><span class="online-dot"></span> HERRAMIENTA INTERACTIVA <span class="tag-private">LOCAL / PRIVADO</span></div>
+        <div class="workspace-body">
+          <div class="workspace-top">
+            <span class="step-id">01 — DIAGNÓSTICO</span>
+            <h2 id="tool-title">Primero, tu archivo.</h2>
+            <p>Arrastra uno o varios archivos DWG. Leemos únicamente el código del formato, no el contenido del plano.</p>
+          </div>
+          <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="Seleccionar archivos DWG" aria-describedby="drop-help">
+            <input id="dwg-input" type="file" accept=".dwg" multiple hidden>
+            <div class="drop-icon" aria-hidden="true"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M8 3h15l6 7v23H8z" stroke="currentColor" stroke-width="1.6"/><path d="M23 3v8h6M18.5 25V14M14 18.5l4.5-4.5 4.5 4.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
+            <strong>ARRASTRA TU DWG AQUÍ</strong>
+            <span>O <u>selecciona archivos</u> de tu equipo</span>
+            <small id="drop-help">Varios archivos · Sin subir archivos · Hasta 100 por selección</small>
+          </div>
+          <div class="file-summary">
+            <span id="files-count">0 ARCHIVOS</span>
+            <button type="button" id="clear-files" disabled>LIMPIAR ×</button>
+          </div>
+          <div class="results" id="results" aria-live="polite"><div class="empty-results">Aquí verás el formato que usa cada DWG.</div></div>
+
+          <div class="target-row">
+            <div>
+              <span class="step-id">02 — COMPATIBILIDAD</span>
+              <label for="target-version">¿Qué AutoCAD debe abrirlo?</label>
+            </div>
+            <select id="target-version">
+              <option value="2018">2018–2027 · DWG 2018</option>
+              <option value="2013" selected>2013–2017 · DWG 2013</option>
+              <option value="2010">2010–2012 · DWG 2010</option>
+              <option value="2007">2007–2009 · DWG 2007</option>
+              <option value="2004">2004–2006 · DWG 2004</option>
+              <option value="2000">2000–2002 · DWG 2000</option>
+              <option value="R14">R14 · DWG R14</option>
+            </select>
+          </div>
+          <div class="compat-message" id="compat-message" role="status">Selecciona un DWG para comprobar su compatibilidad.</div>
+          <button type="button" class="report-btn" id="export-report" disabled>DESCARGAR DIAGNÓSTICO .JSON <span>↓</span></button>
+        </div>
+        <div class="workspace-footer"><span aria-hidden="true">●</span> TU ARCHIVO SE QUEDA EN TU EQUIPO. EL ANÁLISIS NO MODIFICA NADA.</div>
+      </section>
+    </div>
+    <div class="hero-bottom"><span>EL ARCHIVO CORRECTO PARA LA VERSIÓN CORRECTA</span><span>↓ DESLIZA PARA VER CÓMO CONVERTIRLO</span></div>
+  </section>
+
+  <section class="problem" aria-labelledby="problem-title">
+    <div class="section-label"><span>POR QUÉ EXISTE</span><span>UN ERROR COMÚN · UNA SOLUCIÓN SENCILLA</span></div>
+    <div class="problem-grid">
+      <div class="problem-message">
+        <span class="eyebrow eyebrow-dark">IMAGINA ESTO</span>
+        <h2 id="problem-title">A veces el problema<br><em>es la versión.</em></h2>
+        <p>Recibes un dibujo guardado en AutoCAD 2025, pero debes entregarlo a alguien que trabaja con AutoCAD 2016. Aunque el archivo se llame igual, el formato puede impedir que lo abra.</p>
+        <p>La solución puede ser guardarlo como <strong>DWG 2013</strong>. Eso es lo que esta herramienta te ayuda a identificar.</p>
+        <span class="scenario-note">EJEMPLO DE COMPATIBILIDAD · NO ES UNA VALIDACIÓN DE TU PLANO</span>
+      </div>
+      <div class="compat-demo" aria-label="Ejemplo de versiones de archivos DWG">
+        <div class="case-card old"><div class="case-eyebrow">ARCHIVO ORIGINAL</div><div class="case-name"><span class="file-icon">DWG</span> plano_obra.dwg</div><div class="case-version">DWG 2018 <span>AC1032</span></div><div class="case-status bad">✕ &nbsp; NO COMPATIBLE CON AUTOCAD 2016</div></div>
+        <div class="case-connector"><span>GUARDAR COMO</span><i aria-hidden="true">↘</i><strong>DWG 2013</strong></div>
+        <div class="case-card new"><div class="case-eyebrow">COPIA PARA ENTREGA</div><div class="case-name"><span class="file-icon">DWG</span> plano_obra_2013.dwg</div><div class="case-version">DWG 2013 <span>AC1027</span></div><div class="case-status good">✓ &nbsp; FORMATO COMPATIBLE CON AUTOCAD 2016*</div></div>
+        <p>*Compatibilidad del formato, no garantía de conservación de objetos especializados.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof-section" id="pruebas-reales" aria-labelledby="proof-title">
+  <div class="section-label"><span>EVIDENCIA VERIFICABLE / AUTOQA CAD</span><span>21 OCT 2026 · UNA MUESTRA REAL</span></div>
+  <div class="proof-heading">
+    <div>
+      <p class="eyebrow eyebrow-dark"><span class="eyebrow-dash"></span> INVESTIGACIÓN PUBLICADA</p>
+      <h2 id="proof-title">No te pedimos<br><em>fe. Mostramos pruebas.</em></h2>
+    </div>
+    <div class="proof-summary">
+      <span class="proof-marker">PROBADO CON AUTOCAD 2027</span>
+      <p>Tomamos <strong>un archivo DWG auténtico de ingeniería</strong>, guardado en formato 2013. Lo convertimos a versiones antiguas y nuevas, reabrimos cada copia y auditamos sus objetos CAD. El plano original no se modificó ni se hizo público.</p>
+      <a href="https://trafficlab-panorama.com/downloads/dwg-version-switch-qa-public-v1.json" download="DWG-Version-Switch-Pruebas-Reales.json" class="report-link">DESCARGAR REPORTE TÉCNICO ANONIMIZADO <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <div class="proof-metrics">
+    <div class="proof-metric"><strong>7/7</strong><span>CONVERSIONES Y REAPERTURAS<br>CON UN DWG REAL</span></div>
+    <div class="proof-metric"><strong>8/8</strong><span>INVENTARIOS CAD NATIVOS<br>DEL ORIGINAL Y LAS COPIAS</span></div>
+    <div class="proof-metric"><strong>3.043</strong><span>ENTIDADES ENUMERADAS<br>EN CADA VERSIÓN</span></div>
+    <div class="proof-metric"><strong>10/10</strong><span>PRUEBAS WEB CON<br>ARCHIVOS DWG REALES</span></div>
+  </div>
+  <div class="proof-data">
+    <div class="proof-table-block">
+      <div class="proof-data-heading"><span>REGISTRO DE CONVERSIONES</span><span>ORIGEN DWG 2013 · AC1027</span></div>
+      <h3>Siete cambios de versión.<br><em>Siete reaperturas.</em></h3>
+      <div class="proof-table-scroll">
+        <table class="proof-table">
+          <caption>Resultados de siete conversiones sobre un único archivo DWG privado real</caption>
+          <thead><tr><th scope="col">OPERACIÓN</th><th scope="col">CABECERA</th><th scope="col">AUTO­CAD</th></tr></thead>
+          <tbody>
+            <tr><td>2013 → 2010</td><td>AC1024</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2013 → 2007</td><td>AC1021</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2013 → 2004</td><td>AC1018</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2013 → 2000</td><td>AC1015</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2013 → R14</td><td>AC1014</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2013 → 2018</td><td>AC1032</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+            <tr><td>2007 → 2018</td><td>AC1032</td><td><span class="proof-pass">✓ Correcta</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <aside class="proof-method">
+      <span>QUÉ VERIFICAMOS</span>
+      <h3>La versión es solo<br>el principio.</h3>
+      <ol>
+        <li><b>01 / ORIGINAL.</b> SHA-256 idéntico antes y después.</li>
+        <li><b>02 / ARCHIVO.</b> Firma DWG de destino comprobada.</li>
+        <li><b>03 / APERTURA.</b> AutoCAD abrió cada copia.</li>
+        <li><b>04 / CONTENIDO.</b> Misma cantidad de 3.043 entidades y distribución por tipos, capas y presentaciones. Unidades y límites generales sin diferencias.</li>
+      </ol>
+      <p class="proof-warning">Encontramos <strong>cuatro identificadores de bloques anónimos renumerados</strong> y nuevos registros APPID en ciertos formatos antiguos. Una apertura correcta no certifica equivalencia 1:1.</p>
+    </aside>
+  </div>
+  <details class="proof-details">
+    <summary>ALCANCE Y LIMITACIONES DE LA PRUEBA <span aria-hidden="true">+</span></summary>
+    <p>Se evaluó <strong>un solo DWG real</strong>, no todos los dibujos ni todas las instalaciones de AutoCAD. No se demostró conservación exhaustiva de XREF, atributos, bloques dinámicos, objetos AEC/Civil 3D, referencias, cotas asociativas ni fidelidad de impresión. Los resultados profesionales deben revisarse antes de entregarse. Los datos de clientes permanecen privados; el informe público solo contiene resultados agregados.</p>
+    <a href="https://trafficlab-panorama.com/downloads/dwg-version-switch-qa-public-v1.json" download>DESCARGAR DATOS DE PRUEBA EN JSON ↗</a>
+  </details>
+</section>
+
+<section class="oss-section" id="codigo-abierto" aria-labelledby="oss-title">
+  <div class="oss-copy">
+    <span class="oss-tag"><span class="oss-pulse"></span> COMMUNITY V1.0.0 / CÓDIGO ABIERTO MIT</span>
+    <h2 id="oss-title">Libre para usar.<br><em>Libre para mejorar.</em></h2>
+    <p>La edición Comunidad no es una demostración bloqueada. Puedes estudiar, modificar, distribuir e integrar el código, incluso comercialmente, conservando el aviso de licencia MIT.</p>
+    <div class="oss-actions">
+      <a class="oss-download" href="https://trafficlab-panorama.com/downloads/dwg-version-switch-community-v1.0.0.zip" download="DWG-Version-Switch-Community-v1.0.0.zip">DESCARGAR CÓDIGO + CONVERSOR <span aria-hidden="true">↗</span></a>
+      <a class="oss-license-link" href="https://trafficlab-panorama.com/downloads/dwg-version-switch-MIT-LICENSE.txt" target="_blank" rel="noopener noreferrer">LEER LICENCIA MIT ↗</a>
+    </div>
+    <p class="oss-disclaimer">El ZIP incluye el código del conversor, la interfaz web, documentación, pruebas y reporte público. <strong>No incluye AutoCAD</strong> ni bibliotecas CAD propietarias. Para convertir necesitas AutoCAD de escritorio instalado y licenciado.</p>
+  </div>
+  <div class="oss-aside">
+    <span class="oss-aside-top">COMMUNITY ≠ PRODUCTO LIMITADO</span>
+    <h3>El código abierto<br><em>se queda abierto.</em></h3>
+    <div class="oss-option"><span>01</span><p><b>Comunidad MIT</b><small>Gratis · código reutilizable · aportes y mejoras permitidos.</small></p></div>
+    <div class="oss-option"><span>02</span><p><b>Ingeniería a medida</b><small>Si una empresa necesita integración, soporte o QA CAD avanzada, podemos evaluar un servicio profesional. No hay edición Pro publicada todavía.</small></p></div>
+    <div class="oss-bottom">PANORAMA LAB × TRAFICLABPRO / INGENIERÍA Y SOFTWARE</div>
+  </div>
+</section>
+
+  <section class="conversion" id="como-funciona" aria-labelledby="conversion-title">
+    <div class="section-label"><span>CONVERSIÓN REAL</span><span>WINDOWS / AUTOCAD INSTALADO</span></div>
+    <div class="conversion-head">
+      <div><p class="eyebrow eyebrow-dark">03 — CONVERTIR</p><h2 id="conversion-title">De la duda<br>a la <em>versión correcta.</em></h2></div>
+      <p>El diagnóstico del navegador es instantáneo. Para crear una copia DWG en otra versión, utiliza nuestro asistente local de Windows con tu propio AutoCAD instalado.</p>
+    </div>
+    <div class="flow-cards">
+      <article class="flow-card"><span class="flow-index">01 <span>●</span></span><div class="flow-symbol" aria-hidden="true">⌁</div><h3>Detecta.</h3><p>Selecciona el DWG. Te mostramos su formato real, sin pedir cuenta ni cargar archivos a Internet.</p></article>
+      <article class="flow-card"><span class="flow-index">02 <span>↗</span></span><div class="flow-symbol" aria-hidden="true">↔</div><h3>Elige.</h3><p>Indica qué versión de AutoCAD necesita abrirlo. Sabrás si ya es compatible o requiere otro formato.</p></article>
+      <article class="flow-card accent-card"><span class="flow-index">03 <span>✓</span></span><div class="flow-symbol" aria-hidden="true">↓</div><h3>Convierte.</h3><p>Descarga el asistente local. Guarda una copia DWG con otro nombre y verifica su reapertura con AutoCAD.</p></article>
+    </div>
+    <div class="download-panel">
+      <div class="download-copy">
+        <span class="download-overline">GRATIS / SIN REGISTRO</span>
+        <h3>Tu siguiente entrega,<br>sin el error de versión.</h3>
+        <p>Conversor Windows para varios DWG. Conserva el original y entrega archivos nuevos junto a un informe del proceso.</p>
+        <div class="download-pills"><span>WINDOWS</span><span>POR LOTES</span><span>COPIA SEGURA</span></div>
+      </div>
+      <div class="download-actions">
+        <a class="download-btn" href="https://trafficlab-panorama.com/downloads/dwg-version-switch-community-v1.0.0.zip" download="DWG-Version-Switch-Community-v1.0.0.zip"><span>DESCARGAR CONVERSOR .ZIP</span><span aria-hidden="true">↗</span></a>
+        <p class="requirement">Edición Comunidad · código MIT. Requiere AutoCAD de escritorio con Core Console y licencia propia. Autodesk no está incluido.</p>
+        <a class="trueview" href="https://www.autodesk.com/products/dwg-trueview/overview" target="_blank" rel="noopener noreferrer">¿No tienes AutoCAD? Conoce DWG TrueView gratis, de Autodesk <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="support" aria-labelledby="support-title">
+    <div class="section-label"><span>SIN LETRA PEQUEÑA</span><span>RESPUESTAS ANTES DE DESCARGAR</span></div>
+    <div class="support-grid">
+      <div class="support-intro"><p class="eyebrow eyebrow-dark">DATOS CLAROS, DECISIONES CORRECTAS</p><h2 id="support-title">Lo importante<br><em>de verdad.</em></h2><p>La herramienta detecta formatos y ayuda a convertirlos, pero no promete reparar dibujos dañados ni garantizar equivalencia técnica del 100 %.</p></div>
+      <div class="faq-list" id="preguntas">
+        <details open><summary>¿Puedo convertir directamente en la web? <span>+</span></summary><p>No. En esta página puedes identificar el formato DWG sin subirlo. Para crear otra versión, necesitas el conversor local de Windows con AutoCAD instalado y licenciado.</p></details>
+        <details><summary>¿Y si no tengo AutoCAD? <span>+</span></summary><p>Autodesk ofrece <a href="https://www.autodesk.com/products/dwg-trueview/overview" target="_blank" rel="noopener noreferrer">DWG TrueView</a>, una herramienta gratuita que incluye conversión de versiones por lotes. No necesitas nuestro programa para utilizarla.</p></details>
+        <details><summary>¿Sirve para AutoCAD 2027 y 2018? <span>+</span></summary><p>Sí, ambos usan el formato DWG 2018 (AC1032). Que un archivo sea de 2027 no significa necesariamente que haya que convertirlo para abrirlo en AutoCAD 2018; también importa el contenido del dibujo.</p></details>
+        <details><summary>¿Modifica mis archivos originales? <span>+</span></summary><p>El diagnóstico web no modifica archivos. El asistente local guarda copias con nombres nuevos y genera un informe. Aun así, haz una copia de seguridad antes de convertir planos importantes.</p></details>
+        <details><summary>¿El plano convertido conserva todo? <span>+</span></summary><p>No podemos garantizar equivalencia 1:1. Bloques dinámicos, XREF, objetos proxy y estilos de productos verticales pueden cambiar al guardar en formatos antiguos. Revisa tu archivo antes de entregarlo profesionalmente.</p></details>
+        <details><summary>¿Funciona en Mac? <span>+</span></summary><p>La identificación del formato funciona en navegadores modernos de Mac, Windows y móvil. El conversor descargable de esta versión está diseñado solo para Windows con AutoCAD de escritorio.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="end-cta">
+    <span class="end-overline">TRAFICLABPRO / HERRAMIENTAS ÚTILES</span>
+    <h2>EL PLANO IMPORTA.<br><em>LA VERSIÓN TAMBIÉN.</em></h2>
+    <a href="#analizador">COMPROBAR MI DWG <span aria-hidden="true">↗</span></a>
+    <div class="end-label">SIN REGISTRO · SIN SUBIR ARCHIVOS · GRATIS</div>
+  </section>
+</main>
+
+<footer class="footer">
+  <a href="https://trafficlab-panorama.com/" class="footer-brand"><span>✳</span> PANORAMA <strong>LAB</strong></a>
+  <p>Una herramienta de TraficLabPro por PANORAMA INGENIERÍA. No afiliada a Autodesk. AutoCAD y DWG son marcas de sus titulares.</p>
+  <a href="https://trafficlab-panorama.com/">VOLVER A LA COLECCIÓN <span aria-hidden="true">↑</span></a>
+</footer>
+</body>
+</html>
