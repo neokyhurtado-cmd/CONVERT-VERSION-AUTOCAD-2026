@@ -6,7 +6,7 @@
 
 **Licencia:** MIT. Puedes usarlo, estudiarlo, modificarlo y distribuirlo, incluso comercialmente, conservando el aviso de licencia. Autodesk/AutoCAD no forman parte del software licenciado.
 
-![Vista de la herramienta DWG Version Switch, con diseño claro y analizador local](assets/preview.png)
+![Vista de la herramienta DWG Version Switch, con diseño claro y analizador local](assets/preview.svg)
 
 ## ¿Qué problema resuelve?
 
