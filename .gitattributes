@@ -1,0 +1,3 @@
+# Keep the originally tested PowerShell/CMD source bytes unchanged in source archives.
+Convertir-DWG.ps1 -text
+INICIAR-CONVERSOR.cmd -text
